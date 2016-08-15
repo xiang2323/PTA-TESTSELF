@@ -1,0 +1,40 @@
+package main;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int num = in.nextInt();
+		String pic = in.next();
+		int row = 0;
+		int yushu = 0;
+		row = (int)Math.sqrt((num+1)/2);
+		int a = 2*row-1;
+		yushu = num - (2*row*row-1);
+		String[][] b = new String[a][a];
+		for(int i=0;i<row;i++){
+			for(int n=0;n<a-i;n++){
+				if(i>=1&&n<i){
+					b[i][n] = " ";
+				}
+				else if(i>=1&&n>a-i-1){
+					b[i][n] = " ";
+				}
+				else{
+					b[i][n] = pic;
+			}
+				System.out.print(b[i][n]);
+		}
+			System.out.println();
+	}
+		for(int i=row-2;i>=0;i--){
+			for(int n=0;n<a-i;n++){
+				System.out.print(b[i][n]);
+		}
+			System.out.println();
+	}
+		System.out.print(yushu);
+}
+}
